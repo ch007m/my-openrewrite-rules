@@ -10,7 +10,7 @@ class SayHelloResourceTest implements RewriteTest {
 
     @Override
     public void defaults(RecipeSpec spec) {
-        spec.recipe(new SayHelloRecipe("com.yourorg.FooBar"));
+        spec.recipe(new SayHelloRecipe("dev.snowdrop.demo.FooBar"));
     }
 
     @Test
@@ -18,17 +18,17 @@ class SayHelloResourceTest implements RewriteTest {
         rewriteRun(
           java(
             """
-                package com.yourorg;
+                package dev.snowdrop.demo;
 
                 class FooBar {
                 }
             """,
             """
-                package com.yourorg;
+                package dev.snowdrop.demo;
 
                 class FooBar {
                     public String hello() {
-                        return "Hello from com.yourorg.FooBar!";
+                        return "Hello from dev.snowdrop.demo.FooBar!";
                     }
                 }
             """
@@ -41,7 +41,7 @@ class SayHelloResourceTest implements RewriteTest {
         rewriteRun(
           java(
             """
-                package com.yourorg;
+                package dev.snowdrop.demo;
     
                 class FooBar {
                     public String hello() { return ""; }
@@ -56,7 +56,7 @@ class SayHelloResourceTest implements RewriteTest {
         rewriteRun(
           java(
             """
-                package com.yourorg;
+                package dev.snowdrop.demo;
     
                 class Bash {
                 }
