@@ -5,3 +5,5 @@ recipeList:
   - org.openrewrite.java.ChangePackage:
       oldPackageName: dev.snowdrop.demo
       newPackageName: dev.snowdrop.booking
+  - dev.snowdrop.SayHelloRecipe:
+      fullyQualifiedClassName: com.yourorg.FooBar

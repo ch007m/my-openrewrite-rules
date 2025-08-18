@@ -10,6 +10,10 @@ Select a project where the old package name is `dev.snowdrop.demo` to rename it 
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
          -Drewrite.recipeArtifactCoordinates=dev.snowdrop:openrewrite-rules:1.0-SNAPSHOT \
          -Drewrite.activeRecipes=dev.snowdrop.demo.DemoToBookingPackage
+
+mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
+  -Drewrite.recipeArtifactCoordinates=com.yourorg:rewrite-recipe-starter:0.1.0-SNAPSHOT \
+  -Drewrite.activeRecipes=com.yourorg.UseOpenRewriteNullable    
 ```
 
 ## Issue
