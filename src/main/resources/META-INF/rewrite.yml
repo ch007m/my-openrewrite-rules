@@ -1,0 +1,7 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: dev.snowdrop.demo.DemoToBookingPackage
+recipeList:
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: dev.snowdrop.demo
+      newPackageName: dev.snowdrop.booking
