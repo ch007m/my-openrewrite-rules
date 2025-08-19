@@ -9,6 +9,8 @@ import org.openrewrite.*;
 import org.openrewrite.java.JavaIsoVisitor;
 import org.openrewrite.java.JavaTemplate;
 import org.openrewrite.java.tree.J;
+import org.openrewrite.java.tree.JavaType;
+import org.openrewrite.java.tree.TypeUtils;
 
 // Making your recipe immutable helps make them idempotent and eliminates a variety of possible bugs.
 // Configuring your recipe in this way also guarantees that basic validation of parameters will be done for you by rewrite.
@@ -46,7 +48,8 @@ public class SayHelloRecipe extends Recipe {
         @Override
         public J.ClassDeclaration visitClassDeclaration(J.ClassDeclaration classDecl, ExecutionContext executionContext) {
             // Don't make changes to classes that don't match the fully qualified name
-            if (classDecl.getType() == null || !classDecl.getType().getFullyQualifiedName().equals(fullyQualifiedClassName)) {
+            JavaType.FullyQualified fqTargetType = TypeUtils.asFullyQualified(classDecl.getType());
+            if (fqTargetType != null && !fqTargetType.getFullyQualifiedName().equals(fullyQualifiedClassName)) {
                 return classDecl;
             }
 
