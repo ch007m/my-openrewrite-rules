@@ -1,6 +1,7 @@
-package dev.snowdrop;
+package org.openrewrite.java;
 
 import org.junit.jupiter.api.Test;
+import org.openrewrite.java.SayHelloRecipe;
 import org.openrewrite.test.RecipeSpec;
 import org.openrewrite.test.RewriteTest;
 

@@ -1,6 +1,6 @@
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name:  dev.snowdrop.SayHelloToFooBarRecipe
+name:  org.openrewrite.java.SayHelloToFooBarRecipe
 recipeList:
-  - dev.snowdrop.SayHelloRecipe:
+  - org.openrewrite.java.SayHelloRecipe:
       fullyQualifiedClassName: dev.snowdrop.demo.FooBar

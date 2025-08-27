@@ -1,9 +1,7 @@
-package dev.snowdrop;
+package org.openrewrite.java;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.openrewrite.*;
-import org.openrewrite.java.JavaIsoVisitor;
-import org.openrewrite.java.JavaTemplate;
 import org.openrewrite.java.tree.J;
 
 import java.util.Objects;
