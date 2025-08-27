@@ -1,9 +1,6 @@
 ---
 type: specs.openrewrite.org/v1beta/recipe
-name: dev.snowdrop.rules
+name:  dev.snowdrop.SayHelloRecipe
 recipeList:
-  #- org.openrewrite.java.ChangePackage:
-  #    oldPackageName: dev.snowdrop.demo
-  #    newPackageName: dev.snowdrop.booking
   - dev.snowdrop.SayHelloRecipe:
       fullyQualifiedClassName: dev.snowdrop.demo.FooBar

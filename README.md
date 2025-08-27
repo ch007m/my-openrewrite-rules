@@ -7,6 +7,7 @@ mvn clean install
 
 Select a project containing as fully qualified name `dev.snowdrop.demo.FooBar` and execute the command:
 ```shell
+cd /Users/cmoullia/code/cncf/konveyor/openrewrite/foobar-example
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=dev.snowdrop:openrewrite-rules:1.0-SNAPSHOT \
   -Drewrite.activeRecipes=dev.snowdrop.SayHelloRecipe
