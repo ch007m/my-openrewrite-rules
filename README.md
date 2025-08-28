@@ -7,11 +7,9 @@ mvn clean install
 
 Select a project containing as fully qualified name `dev.snowdrop.demo.FooBar` and execute the command:
 ```shell
-cd /Users/cmoullia/code/cncf/konveyor/openrewrite/foobar-example
 mvn -U org.openrewrite.maven:rewrite-maven-plugin:run \
         -Drewrite.recipeArtifactCoordinates=dev.snowdrop:openrewrite-rules:1.0-SNAPSHOT \
-        -Drewrite.activeRecipes=org.openrewrite.java.SayHelloRecipe \
-        -Drewrite.options=fullyQualifiedClassName=dev.snowdrop.demo.FooBar
+        -Drewrite.activeRecipes=org.openrewrite.java.SayHelloToFooBarRecipe
 ```
 When done, check if openrewrite added a Hello method
 ```java
@@ -29,6 +27,6 @@ To debug: https://docs.openrewrite.org/reference/faq#my-recipe-runs-but-is-not-m
 ```shell
 mvnDebug -U org.openrewrite.maven:rewrite-maven-plugin:run \
   -Drewrite.recipeArtifactCoordinates=dev.snowdrop:openrewrite-rules:1.0-SNAPSHOT \
-  -Drewrite.activeRecipes=org.openrewrite.FindParseFailures,org.openrewrite.java.search.FindMissingTypes,org.openrewrite.java.SayHelloRecipe \
+  -Drewrite.activeRecipes=org.openrewrite.FindParseFailures,org.openrewrite.java.search.FindMissingTypes,org.openrewrite.java.SayHelloToFooBarRecipe \
   -Drewrite.exportDatatables=true
 ```

@@ -19,19 +19,19 @@ class SayHelloResourceTest implements RewriteTest {
         rewriteRun(
           java(
             """
-                package dev.snowdrop.demo;
+            package dev.snowdrop.demo;
 
-                class FooBar {
-                }
+            class FooBar {
+            }
             """,
             """
-                package dev.snowdrop.demo;
+            package dev.snowdrop.demo;
 
-                class FooBar {
-                    public String hello() {
-                        return "Hello from dev.snowdrop.demo.FooBar!";
-                    }
+            class FooBar {
+                public String hello() {
+                    return "Hello from dev.snowdrop.demo.FooBar!";
                 }
+            }
             """
           )
         );
@@ -41,12 +41,12 @@ class SayHelloResourceTest implements RewriteTest {
     void doesNotChangeExistingHello() {
         rewriteRun(
           java(
-            """
-                package dev.snowdrop.demo;
-    
-                class FooBar {
-                    public String hello() { return ""; }
-                }
+    """
+            package dev.snowdrop.demo;
+
+            class FooBar {
+                public String hello() { return ""; }
+            }
             """
           )
         );
@@ -56,11 +56,11 @@ class SayHelloResourceTest implements RewriteTest {
     void doesNotChangeOtherClasses() {
         rewriteRun(
           java(
-            """
-                package dev.snowdrop.demo;
-    
-                class Bash {
-                }
+    """
+            package dev.snowdrop.demo;
+
+            class Bash {
+            }
             """
           )
         );
